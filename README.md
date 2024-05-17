@@ -24,3 +24,21 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 ```
+
+### Kafka topic 관련 명령어 (CLI)
+```
+// docker-compose 기준
+# docker-compose exec kafka bash
+
+// 새로운 토픽 [test-topic] 추가 및 파티션 개수 설정
+# kafka-topics.sh --create --topic test-topic --partitions 2 --replication-factor 1 --bootstrap-server localhost:9092
+
+// 기존 test-topic 토픽에 파티션 2개 설정
+# kafka-topics.sh --bootstrap-server localhost:9092 --alter --topic test-topic --partitions 2
+
+// test-topic 설정 확인
+# kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test-topic
+
+// topic 삭제 [my-topic-1]
+# kafka-topics.sh --delete --topic my-topic-1 --bootstrap-server localhost:9092
+```
