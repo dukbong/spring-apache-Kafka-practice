@@ -23,6 +23,18 @@ services:
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9093
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpwd
+      MYSQL_DATABASE: maindata
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pwd
+    volumes:
+      - mysql-data:/var/lib/mysql
 ```
 
 ### Kafka topic 관련 명령어 (CLI)
