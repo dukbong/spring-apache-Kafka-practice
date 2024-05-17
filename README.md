@@ -10,6 +10,7 @@ services:
       - "2181:2181"
     environment:
         ZOOKEEPER_CLIENT_PORT: 2181
+
   kafka:
     image: wurstmeister/kafka:2.13-2.7.0
     ports:
