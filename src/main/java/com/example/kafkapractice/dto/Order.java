@@ -10,12 +10,14 @@ import lombok.NoArgsConstructor;
 @Getter
 public class Order {
 
+	private Long id;
 	private LocalDateTime orderTime;
 	private String productName;
 	private Boolean orderStatus;
 	
 	@Builder
-	public Order(LocalDateTime orderTime, String productName, Boolean orderStatus) {
+	public Order(Long id, LocalDateTime orderTime, String productName, Boolean orderStatus) {
+		this.id = id;
 		this.orderTime = orderTime;
 		this.productName = productName;
 		this.orderStatus = orderStatus;
