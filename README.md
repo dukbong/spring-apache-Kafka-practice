@@ -36,6 +36,8 @@ services:
       MYSQL_PASSWORD: pwd
     volumes:
       - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
 ```
 
 ### Kafka topic 관련 명령어 (CLI)
