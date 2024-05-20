@@ -35,6 +35,7 @@ public class KafkaProducerConfig {
       configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
       configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
       configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+      configProps.put(ProducerConfig.ACKS_CONFIG, "1"); // 생성된 메시지가 브로커에 저장되고 잘 저장되었는지 응답까지 받겠다는 의미
       return new DefaultKafkaProducerFactory<>(configProps);
 	}
     
